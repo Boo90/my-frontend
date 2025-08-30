@@ -36,7 +36,7 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 15% 30%, rgba(0, 212, 255, 0.05) 0%, transparent 30%),
                 radial-gradient(circle at 85% 70%, rgba(123, 75, 250, 0.05) 0%, transparent 30%),
                 radial-gradient(circle at 50% 20%, rgba(255, 54, 183, 0.05) 0%, transparent 30%);
@@ -50,7 +50,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 80% 10%, rgba(123, 75, 250, 0.1) 0%, transparent 20%),
                 radial-gradient(circle at 20% 90%, rgba(0, 212, 255, 0.1) 0%, transparent 20%),
                 radial-gradient(circle at 60% 80%, rgba(255, 54, 183, 0.1) 0%, transparent 20%);
@@ -182,6 +182,22 @@
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 25px rgba(123, 75, 250, 0.5);
+        }
+
+        .lang-switch-btn {
+            background: var(--dark);
+            color: var(--light);
+            border: 1px solid var(--glass-border);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch-btn:hover {
+            background: var(--primary);
+            color: var(--darker);
         }
 
         /* أنماط قسم البطل VIP */
@@ -989,7 +1005,7 @@
             .hero-text h1 {
                 font-size: 3.2rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.5rem;
             }
@@ -1000,25 +1016,25 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .hero-text {
                 padding-right: 0;
                 margin-bottom: 60px;
             }
-            
+
             .hero-text p {
                 margin: 0 auto 40px;
             }
-            
+
             .steps {
                 flex-direction: column;
                 gap: 50px;
             }
-            
+
             .steps::before {
                 display: none;
             }
-            
+
             .nav-links {
                 display: none;
             }
@@ -1028,38 +1044,38 @@
             .hero-text h1 {
                 font-size: 2.5rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
-            
+
             .subscribe-form {
                 flex-direction: column;
                 border-radius: 20px;
             }
-            
+
             .subscribe-form input {
                 border-radius: 20px 20px 0 0;
                 margin-bottom: 1px;
             }
-            
+
             .subscribe-form button {
                 border-radius: 0 0 20px 20px;
             }
-            
+
             .pricing-card.popular {
                 transform: scale(1);
             }
-            
+
             .pricing-card.popular:hover {
                 transform: translateY(-15px);
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             .primary-btn, .secondary-btn {
                 width: 100%;
             }
@@ -1084,7 +1100,7 @@
         }
     </style>
 </head>
-<body>
+<body dir="rtl">
     <header id="header">
         <div class="container">
             <nav>
@@ -1093,12 +1109,15 @@
                     <span>&lt;</span>DesignSquad<span>&gt;</span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#features">الميزات</a></li>
-                    <li><a href="#how-it-works">كيفية العمل</a></li>
-                    <li><a href="#pricing">الباقات</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
+                    <li><a href="#features" data-lang-key="features">الميزات</a></li>
+                    <li><a href="#how-it-works" data-lang-key="how-it-works">كيفية العمل</a></li>
+                    <li><a href="#pricing" data-lang-key="pricing">الباقات</a></li>
+                    <li><a href="#contact" data-lang-key="contact">اتصل بنا</a></li>
                 </ul>
-                <button class="cta-button">ابدأ التجربة VIP</button>
+                <div>
+                    <button class="cta-button" data-lang-key="start-vip">ابدأ التجربة VIP</button>
+                    <button id="lang-switch" class="lang-switch-btn">EN</button>
+                </div>
             </nav>
         </div>
     </header>
@@ -1107,11 +1126,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>تصميم ويب <span>بلمسة VIP</span></h1>
-                    <p>منصة DesignSquad VIP تقدم لك تجربة فريدة تجمع بين الذكاء الاصطناعي المتقدم وأحدث تقنيات التصميم لإنشاء مواقع ويب استثنائية في دقائق</p>
+                    <h1 data-lang-key="hero-title">تصميم ويب <span class="gradient-text">بلمسة VIP</span></h1>
+                    <p data-lang-key="hero-text">منصة DesignSquad VIP تقدم لك تجربة فريدة تجمع بين الذكاء الاصطناعي المتقدم وأحدث تقنيات التصميم لإنشاء مواقع ويب استثنائية في دقائق</p>
                     <div class="hero-buttons">
-                        <button class="primary-btn">ابدأ التجربة المجانية</button>
-                        <button class="secondary-btn">استعراض المشاريع</button>
+                        <button class="primary-btn" data-lang-key="start-free">ابدأ التجربة المجانية</button>
+                        <button class="secondary-btn" data-lang-key="browse-projects">استعراض المشاريع</button>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -1122,7 +1141,7 @@
                                 <div class="card-button yellow"></div>
                                 <div class="card-button green"></div>
                             </div>
-                            <div class="card-title">مشروع VIP</div>
+                            <div class="card-title" data-lang-key="vip-project">مشروع VIP</div>
                         </div>
                         <div class="card-content">
                             <span class="code-line"><span class="comment">&lt;!-- تصميم بإبداع غير محدود --&gt;</span></span>
@@ -1131,10 +1150,10 @@
                             <span class="code-line">    <span class="tag">&lt;Logo</span> <span class="attr">VIP</span>=<span class="value">"true"</span><span class="tag">&gt;</span><span class="text">DesignSquad</span><span class="tag">&lt;/Logo&gt;</span></span>
                             <span class="code-line">  <span class="tag">&lt;/Nav&gt;</span></span>
                             <span class="code-line">  <span class="tag">&lt;Hero</span> <span class="attr">section</span>=<span class="value">"true"</span><span class="tag">&gt;</span></span>
-                            <span class="code-line">    <span class="tag">&lt;H1</span><span class="tag">&gt;</span><span class="text">تجربة VIP استثنائية</span><span class="tag">&lt;/H1&gt;</span></span>
-                            <span class="code-line">    <span class="tag">&lt;P</span><span class="tag">&gt;</span><span class="text">تصميم متفوق بأدوات حصرية</span><span class="tag">&lt;/P&gt;</span></span>
+                            <span class="code-line">    <span class="tag">&lt;H1</span><span class="tag">&gt;</span><span class="text" data-lang-key="hero-code-title">تجربة VIP استثنائية</span><span class="tag">&lt;/H1&gt;</span></span>
+                            <span class="code-line">    <span class="tag">&lt;P</span><span class="tag">&gt;</span><span class="text" data-lang-key="hero-code-text">تصميم متفوق بأدوات حصرية</span><span class="tag">&lt;/P&gt;</span></span>
                             <span class="code-line">  <span class="tag">&lt;/Hero&gt;</span></span>
-                            <span class="code-line"></span>
+                            <span class="code-line"><span class="tag">&lt;/Header&gt;</span></span>
                         </div>
                     </div>
                 </div>
@@ -1142,150 +1161,129 @@
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="api-status-section" style="padding: 50px 0; text-align: center;">
+        <div class="container">
+            <div id="api-status-card" class="glass-effect" style="padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; color: var(--light);">
+                <h3 data-lang-key="api-status-title">حالة اتصال الواجهة الخلفية</h3>
+                <p id="api-status-message" style="margin-top: 15px; font-size: 1.1rem;"></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features fade-in">
         <div class="container">
             <div class="section-title">
-                <h2>ميزات <span class="gradient-text">حصرية</span></h2>
-                <p>استكشف الأدوات والتقنيات التي تميز منصتنا وتجعل عملية تصميم مواقع الويب سريعة، سهلة، وممتعة للغاية.</p>
+                <h2 data-lang-key="features-title">ميزات <span class="gradient-text">DesignSquad VIP</span></h2>
+                <p data-lang-key="features-text">استمتع بمجموعة من الأدوات والميزات الحصرية التي تجعل عملية التصميم أسرع وأكثر فعالية من أي وقت مضى.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon"><i class="fas fa-magic"></i></div>
-                    <h3>مولد التصميم الذكي</h3>
-                    <p>استخدم الذكاء الاصطناعي لإنشاء تصاميم فريدة تتناسب مع أفكارك، وقم بتعديلها بمرونة كاملة.</p>
+                    <h3 data-lang-key="feature-ai-design-title">تصميم بالذكاء الاصطناعي</h3>
+                    <p data-lang-key="feature-ai-design-text">قم بإنشاء تصميمات كاملة ومخصصة باستخدام قوة الذكاء الاصطناعي في ثوانٍ معدودة.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-brush"></i></div>
-                    <h3>تخصيص كامل</h3>
-                    <p>تحكم في كل عنصر، من الألوان والخطوط إلى التخطيطات والتأثيرات، لتحصل على موقع يعكس هويتك تمامًا.</p>
+                    <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                    <h3 data-lang-key="feature-vip-assets-title">مكتبة أصول VIP</h3>
+                    <p data-lang-key="feature-vip-assets-text">وصول حصري إلى آلاف الأيقونات، الصور، والتأثيرات التي تم تصميمها لأعضاء VIP فقط.</p>
                 </div>
                 <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>أداء فائق</h3>
-                    <p>تصميمات محسّنة للسرعة والأداء، مما يضمن أفضل تجربة للمستخدم على جميع الأجهزة.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <h3>متجاوب بالكامل</h3>
-                    <p>جميع التصاميم تتكيف تلقائيًا مع شاشات الهواتف والأجهزة اللوحية، مما يوفر تجربة سلسة.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-code"></i></div>
-                    <h3>تصدير الكود النظيف</h3>
-                    <p>احصل على كود HTML, CSS, JavaScript نظيف ومنظم، جاهز للتكامل في أي مشروع.</p>
-                </div>
-                <div class="feature-card fade-in">
-                    <div class="feature-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>استضافة VIP</h3>
-                    <p>انشر موقعك على الإنترنت بضغطة زر واحدة، مع استضافة سريعة وموثوقة.</p>
+                    <div class="feature-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 data-lang-key="feature-full-customization-title">تخصيص كامل</h3>
+                    <p data-lang-key="feature-full-customization-text">تحكم في كل عنصر في تصميمك، من الألوان والخطوط إلى التخطيط والرسوم المتحركة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="how-it-works" id="how-it-works">
+    <section id="how-it-works" class="how-it-works fade-in">
         <div class="container">
             <div class="section-title">
-                <h2>خطوات <span class="gradient-text">العمل</span></h2>
-                <p>الوصول إلى تصميم أحلامك لم يكن أسهل من أي وقت مضى. اتبع هذه الخطوات البسيطة الثلاث.</p>
+                <h2 data-lang-key="how-it-works-title">كيفية عمل المنصة</h2>
+                <p data-lang-key="how-it-works-text">نظامنا الذكي يوجهك خطوة بخطوة من الفكرة إلى الواقع.</p>
             </div>
             <div class="steps">
                 <div class="step fade-in">
                     <div class="step-number">1</div>
-                    <h3>ابدأ مشروعك</h3>
-                    <p>أخبرنا عن فكرتك أو اختر قالبًا جاهزًا لتبدأ رحلتك الإبداعية.</p>
+                    <h3 data-lang-key="step1-title">اختر القالب</h3>
+                    <p data-lang-key="step1-text">ابدأ باختيار أحد قوالبنا المصممة مسبقًا أو ابدأ من الصفر.</p>
                 </div>
                 <div class="step fade-in">
                     <div class="step-number">2</div>
-                    <h3>صمم وتخصيص</h3>
-                    <p>استخدم أدواتنا البديهية لتخصيص كل تفاصيل تصميمك بما يناسب ذوقك.</p>
+                    <h3 data-lang-key="step2-title">خصص المحتوى</h3>
+                    <p data-lang-key="step2-text">أضف نصوصك وصورك الخاصة، أو اطلب من الذكاء الاصطناعي إنشائها لك.</p>
                 </div>
                 <div class="step fade-in">
                     <div class="step-number">3</div>
-                    <h3>انشر موقعك</h3>
-                    <p>بضغطة زر واحدة، يصبح موقعك متاحًا للعالم على استضافة VIP.</p>
+                    <h3 data-lang-key="step3-title">انشر وانطلق</h3>
+                    <p data-lang-key="step3-text">انشر موقعك على الإنترنت بضغطة زر واحدة واستعرض عملك.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <section id="pricing" class="pricing fade-in">
         <div class="container">
             <div class="section-title">
-                <h2>الباقات <span class="gradient-text">الخاصة</span></h2>
-                <p>اختر الباقة التي تناسب احتياجاتك. جميع الباقات تقدم تجربة استثنائية وبدون أي رسوم خفية.</p>
+                <h2 data-lang-key="pricing-title">باقات التسعير <span class="gradient-text">المرنة</span></h2>
+                <p data-lang-key="pricing-text">اختر الخطة التي تناسب احتياجاتك من بين باقاتنا المصممة لتناسب الأفراد والفرق.</p>
             </div>
             <div class="pricing-plans">
                 <div class="pricing-card fade-in">
-                    <h3>الباقة المجانية</h3>
-                    <div class="price">
-                        0<span>/شهريًا</span>
-                    </div>
+                    <h3 data-lang-key="basic-plan-title">الباقة الأساسية</h3>
+                    <div class="price"><span>$</span>9.99<span data-lang-key="per-month">/شهر</span></div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> 1 مشروع</li>
-                        <li><i class="fas fa-check"></i> تصدير الكود</li>
-                        <li><i class="fas fa-check"></i> دعم فني محدود</li>
-                        <li><i class="fas fa-times" style="color: #FF5F56;"></i> استضافة VIP</li>
-                        <li><i class="fas fa-times" style="color: #FF5F56;"></i> ميزات الذكاء الاصطناعي</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="basic-feature1">وصول إلى الميزات الأساسية</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="basic-feature2">1 مشروع نشط</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="basic-feature3">دعم فني محدود</span></li>
                     </ul>
-                    <button class="primary-btn">ابدأ الآن</button>
+                    <button class="primary-btn" data-lang-key="select-plan">اختر هذه الباقة</button>
                 </div>
                 <div class="pricing-card popular fade-in">
-                    <h3>باقة VIP</h3>
-                    <div class="price">
-                        29<span>/شهريًا</span>
-                    </div>
+                    <h3 data-lang-key="vip-plan-title">باقة VIP</h3>
+                    <div class="price"><span>$</span>29.99<span data-lang-key="per-month">/شهر</span></div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> عدد غير محدود من المشاريع</li>
-                        <li><i class="fas fa-check"></i> تصدير الكود</li>
-                        <li><i class="fas fa-check"></i> دعم فني على مدار الساعة</li>
-                        <li><i class="fas fa-check"></i> استضافة VIP مجانية</li>
-                        <li><i class="fas fa-check"></i> جميع ميزات الذكاء الاصطناعي</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="vip-feature1">جميع الميزات المتقدمة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="vip-feature2">مشاريع غير محدودة</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="vip-feature3">دعم فني عالي الأولوية</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="vip-feature4">مكتبة أصول VIP</span></li>
                     </ul>
-                    <button class="primary-btn">اشترك الآن</button>
+                    <button class="primary-btn" data-lang-key="select-plan">اختر هذه الباقة</button>
                 </div>
                 <div class="pricing-card fade-in">
-                    <h3>باقة الشركات</h3>
-                    <div class="price">
-                        99<span>/شهريًا</span>
-                    </div>
+                    <h3 data-lang-key="teams-plan-title">باقة الفرق</h3>
+                    <div class="price"><span>$</span>99.99<span data-lang-key="per-month">/شهر</span></div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> كل شيء في باقة VIP</li>
-                        <li><i class="fas fa-check"></i> إدارة حساب مخصصة</li>
-                        <li><i class="fas fa-check"></i> ورش عمل حصرية</li>
-                        <li><i class="fas fa-check"></i> أولويات في الدعم</li>
-                        <li><i class="fas fa-check"></i> تكاملات API متقدمة</li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="teams-feature1">كل شيء في باقة VIP</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="teams-feature2">5 مستخدمين إضافيين</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span data-lang-key="teams-feature3">تدريب مخصص</span></li>
                     </ul>
-                    <button class="primary-btn">اتصل بنا</button>
+                    <button class="primary-btn" data-lang-key="select-plan">اختر هذه الباقة</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="newsletter" id="contact">
+    <section id="contact" class="newsletter fade-in">
         <div class="container">
-            <h2 class="fade-in">تواصل معنا <span class="gradient-text">الآن</span></h2>
-            <p class="fade-in">انضم إلى مجتمعنا لتحصل على آخر التحديثات، النصائح، والعروض الحصرية.</p>
-            <div class="subscribe-form fade-in">
+            <h2 data-lang-key="join-title">انضم إلى <span class="gradient-text">مجتمع VIP</span></h2>
+            <p data-lang-key="join-text">لا تفوت فرصة الحصول على أحدث التحديثات، النصائح، والعروض الحصرية.</p>
+            <form class="subscribe-form">
                 <input type="email" placeholder="أدخل بريدك الإلكتروني..." required>
-                <button type="submit">انضمام</button>
-            </div>
+                <button type="submit" data-lang-key="subscribe-button">اشترك الآن</button>
+            </form>
         </div>
     </section>
 
-    <div style="padding: 100px 0; text-align: center;">
-        <h2>حالة الاتصال بالواجهة الخلفية</h2>
-        <div class="glass-effect" id="api-status-card" style="margin: 20px auto; padding: 20px; border-radius: 10px; max-width: 400px;">
-            <p id="api-status-message" style="font-weight: 600; font-size: 1.2rem;"></p>
-        </div>
-    </div>
-
-    <footer id="footer">
+    <footer class="fade-in">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>DesignSquad</h3>
-                    <p>منصة متكاملة لتصميم المواقع باستخدام الذكاء الاصطناعي، لتجربة إبداعية لا مثيل لها.</p>
+                    <div class="logo">
+                        <span class="logo-vip"><i class="fas fa-crown"></i></span>
+                        <span>&lt;</span>DesignSquad<span>&gt;</span>
+                    </div>
+                    <p style="margin-top: 20px;" data-lang-key="footer-desc">منصة DesignSquad VIP هي وجهتك الأولى لتصميم الويب المتقدم والسهل.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1294,38 +1292,32 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>روابط سريعة</h3>
+                    <h3 data-lang-key="footer-links-title">روابط سريعة</h3>
                     <ul class="footer-links">
-                        <li><a href="#features"><i class="fas fa-caret-left"></i> الميزات</a></li>
-                        <li><a href="#how-it-works"><i class="fas fa-caret-left"></i> كيفية العمل</a></li>
-                        <li><a href="#pricing"><i class="fas fa-caret-left"></i> الباقات</a></li>
-                        <li><a href="#contact"><i class="fas fa-caret-left"></i> اتصل بنا</a></li>
+                        <li><a href="#features" data-lang-key="link-features"><i class="fas fa-angle-left"></i> الميزات</a></li>
+                        <li><a href="#how-it-works" data-lang-key="link-how-it-works"><i class="fas fa-angle-left"></i> كيفية العمل</a></li>
+                        <li><a href="#pricing" data-lang-key="link-pricing"><i class="fas fa-angle-left"></i> الباقات</a></li>
+                        <li><a href="#" data-lang-key="link-privacy"><i class="fas fa-angle-left"></i> الخصوصية</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>الدعم</h3>
+                    <h3 data-lang-key="footer-contact-title">اتصل بنا</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-caret-left"></i> الأسئلة الشائعة</a></li>
-                        <li><a href="#"><i class="fas fa-caret-left"></i> شروط الخدمة</a></li>
-                        <li><a href="#"><i class="fas fa-caret-left"></i> سياسة الخصوصية</a></li>
-                        <li><a href="#"><i class="fas fa-caret-left"></i> الدعم الفني</a></li>
+                        <li><a href="mailto:info@designsquad.vip" data-lang-key="contact-email"><i class="fas fa-envelope"></i> info@designsquad.vip</a></li>
+                        <li><a href="tel:+96871169118" data-lang-key="contact-phone"><i class="fas fa-phone"></i> +968 71169118</a></li>
+                        <li><a href="#" data-lang-key="contact-location"><i class="fas fa-map-marker-alt"></i> مسقط، عُمان</a></li>
                     </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>تواصل معنا</h3>
-                    <p><i class="fas fa-envelope"></i> info@designsquad.vip</p>
-                    <p><i class="fas fa-phone"></i> +966 50 123 4567</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 DesignSquad. جميع الحقوق محفوظة.</p>
+                <p data-lang-key="copyright">&copy; 2025 DesignSquad VIP | عبد الله خميس. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
-    
+
     <script>
-        const apiUrl = 'https://200000-in2e.vercel.app';
-        
+        const apiUrl = 'https://designsquad-api.onrender.com';
+
         async function fetchApiData() {
             const statusMessage = document.getElementById('api-status-message');
             const statusCard = document.getElementById('api-status-card');
@@ -1337,19 +1329,185 @@
             try {
                 const response = await fetch(apiUrl);
                 const data = await response.json();
-                
+
                 statusMessage.textContent = `رسالة من الخادم: ${data.message}`;
                 statusCard.style.backgroundColor = 'rgba(127, 255, 127, 0.1)';
                 statusCard.style.borderColor = 'rgba(0, 128, 0, 0.3)';
             } catch (error) {
                 console.error('Error fetching data:', error);
                 statusMessage.textContent = 'فشل الاتصال بالخادم. تأكد أن الواجهة الخلفية تعمل.';
-                statusCard.style.backgroundColor = 'rgba(255, 127, 127, 0.1)';
-                statusCard.style.borderColor = 'rgba(128, 0, 0, 0.3)';
+                statusCard.style.backgroundColor = 'rgba(255, 153, 153, 0.1)';
+                statusCard.style.borderColor = 'rgba(255, 0, 0, 0.3)';
             }
         }
 
         fetchApiData();
+
+        // Language Translation
+        const translations = {
+            ar: {
+                "features": "الميزات",
+                "how-it-works": "كيفية العمل",
+                "pricing": "الباقات",
+                "contact": "اتصل بنا",
+                "start-vip": "ابدأ التجربة VIP",
+                "hero-title": "تصميم ويب <span class=\"gradient-text\">بلمسة VIP</span>",
+                "hero-text": "منصة DesignSquad VIP تقدم لك تجربة فريدة تجمع بين الذكاء الاصطناعي المتقدم وأحدث تقنيات التصميم لإنشاء مواقع ويب استثنائية في دقائق",
+                "start-free": "ابدأ التجربة المجانية",
+                "browse-projects": "استعراض المشاريع",
+                "vip-project": "مشروع VIP",
+                "hero-code-title": "تجربة VIP استثنائية",
+                "hero-code-text": "تصميم متفوق بأدوات حصرية",
+                "api-status-title": "حالة اتصال الواجهة الخلفية",
+                "features-title": "ميزات <span class=\"gradient-text\">DesignSquad VIP</span>",
+                "features-text": "استمتع بمجموعة من الأدوات والميزات الحصرية التي تجعل عملية التصميم أسرع وأكثر فعالية من أي وقت مضى.",
+                "feature-ai-design-title": "تصميم بالذكاء الاصطناعي",
+                "feature-ai-design-text": "قم بإنشاء تصميمات كاملة ومخصصة باستخدام قوة الذكاء الاصطناعي في ثوانٍ معدودة.",
+                "feature-vip-assets-title": "مكتبة أصول VIP",
+                "feature-vip-assets-text": "وصول حصري إلى آلاف الأيقونات، الصور، والتأثيرات التي تم تصميمها لأعضاء VIP فقط.",
+                "feature-full-customization-title": "تخصيص كامل",
+                "feature-full-customization-text": "تحكم في كل عنصر في تصميمك، من الألوان والخطوط إلى التخطيط والرسوم المتحركة.",
+                "how-it-works-title": "كيفية عمل المنصة",
+                "how-it-works-text": "نظامنا الذكي يوجهك خطوة بخطوة من الفكرة إلى الواقع.",
+                "step1-title": "اختر القالب",
+                "step1-text": "ابدأ باختيار أحد قوالبنا المصممة مسبقًا أو ابدأ من الصفر.",
+                "step2-title": "خصص المحتوى",
+                "step2-text": "أضف نصوصك وصورك الخاصة، أو اطلب من الذكاء الاصطناعي إنشائها لك.",
+                "step3-title": "انشر وانطلق",
+                "step3-text": "انشر موقعك على الإنترنت بضغطة زر واحدة واستعرض عملك.",
+                "pricing-title": "باقات التسعير <span class=\"gradient-text\">المرنة</span>",
+                "pricing-text": "اختر الخطة التي تناسب احتياجاتك من بين باقاتنا المصممة لتناسب الأفراد والفرق.",
+                "per-month": "/شهر",
+                "basic-plan-title": "الباقة الأساسية",
+                "basic-feature1": "وصول إلى الميزات الأساسية",
+                "basic-feature2": "1 مشروع نشط",
+                "basic-feature3": "دعم فني محدود",
+                "vip-plan-title": "باقة VIP",
+                "vip-feature1": "جميع الميزات المتقدمة",
+                "vip-feature2": "مشاريع غير محدودة",
+                "vip-feature3": "دعم فني عالي الأولوية",
+                "vip-feature4": "مكتبة أصول VIP",
+                "teams-plan-title": "باقة الفرق",
+                "teams-feature1": "كل شيء في باقة VIP",
+                "teams-feature2": "5 مستخدمين إضافيين",
+                "teams-feature3": "تدريب مخصص",
+                "select-plan": "اختر هذه الباقة",
+                "join-title": "انضم إلى <span class=\"gradient-text\">مجتمع VIP</span>",
+                "join-text": "لا تفوت فرصة الحصول على أحدث التحديثات، النصائح، والعروض الحصرية.",
+                "subscribe-button": "اشترك الآن",
+                "footer-desc": "منصة DesignSquad VIP هي وجهتك الأولى لتصميم الويب المتقدم والسهل.",
+                "footer-links-title": "روابط سريعة",
+                "link-features": "الميزات",
+                "link-how-it-works": "كيفية العمل",
+                "link-pricing": "الباقات",
+                "link-privacy": "الخصوصية",
+                "footer-contact-title": "اتصل بنا",
+                "contact-email": "info@designsquad.vip",
+                "contact-phone": "+968 71169118",
+                "contact-location": "مسقط، عُمان",
+                "copyright": "&copy; 2025 DesignSquad VIP | عبد الله خميس. جميع الحقوق محفوظة.",
+            },
+            en: {
+                "features": "Features",
+                "how-it-works": "How It Works",
+                "pricing": "Pricing",
+                "contact": "Contact Us",
+                "start-vip": "Start VIP Experience",
+                "hero-title": "Web Design with a <span class=\"gradient-text\">VIP Touch</span>",
+                "hero-text": "DesignSquad VIP is an advanced platform that combines AI and cutting-edge design techniques to create stunning websites in minutes.",
+                "start-free": "Start Free Trial",
+                "browse-projects": "Browse Projects",
+                "vip-project": "VIP Project",
+                "hero-code-title": "Exceptional VIP Experience",
+                "hero-code-text": "Superior design with exclusive tools",
+                "api-status-title": "Backend Connection Status",
+                "features-title": "<span class=\"gradient-text\">DesignSquad VIP</span> Features",
+                "features-text": "Enjoy a suite of exclusive tools and features that make the design process faster and more effective than ever before.",
+                "feature-ai-design-title": "AI-Powered Design",
+                "feature-ai-design-text": "Create complete and custom designs using the power of artificial intelligence in a matter of seconds.",
+                "feature-vip-assets-title": "VIP Asset Library",
+                "feature-vip-assets-text": "Exclusive access to thousands of icons, images, and effects designed only for VIP members.",
+                "feature-full-customization-title": "Full Customization",
+                "feature-full-customization-text": "Control every element of your design, from colors and fonts to layout and animations.",
+                "how-it-works-title": "How the Platform Works",
+                "how-it-works-text": "Our smart system guides you step-by-step from idea to reality.",
+                "step1-title": "Choose a Template",
+                "step1-text": "Start by selecting one of our pre-designed templates or begin from scratch.",
+                "step2-title": "Customize Content",
+                "step2-text": "Add your own texts and images, or ask the AI to generate them for you.",
+                "step3-title": "Publish and Go",
+                "step3-text": "Publish your website online with a single click and show off your work.",
+                "pricing-title": "Flexible <span class=\"gradient-text\">Pricing Plans</span>",
+                "pricing-text": "Choose the plan that suits your needs from our packages designed for individuals and teams.",
+                "per-month": "/month",
+                "basic-plan-title": "Basic Plan",
+                "basic-feature1": "Access to basic features",
+                "basic-feature2": "1 active project",
+                "basic-feature3": "Limited technical support",
+                "vip-plan-title": "VIP Plan",
+                "vip-feature1": "All advanced features",
+                "vip-feature2": "Unlimited projects",
+                "vip-feature3": "High-priority technical support",
+                "vip-feature4": "VIP asset library",
+                "teams-plan-title": "Teams Plan",
+                "teams-feature1": "Everything in VIP plan",
+                "teams-feature2": "5 additional users",
+                "teams-feature3": "Customized training",
+                "select-plan": "Select This Plan",
+                "join-title": "Join the <span class=\"gradient-text\">VIP Community</span>",
+                "join-text": "Don't miss the chance to get the latest updates, tips, and exclusive offers.",
+                "subscribe-button": "Subscribe Now",
+                "footer-desc": "DesignSquad VIP is your first destination for advanced and easy web design.",
+                "footer-links-title": "Quick Links",
+                "link-features": "Features",
+                "link-how-it-works": "How It Works",
+                "link-pricing": "Pricing",
+                "link-privacy": "Privacy",
+                "footer-contact-title": "Contact Us",
+                "contact-email": "info@designsquad.vip",
+                "contact-phone": "+968 71169118",
+                "contact-location": "Muscat, Oman",
+                "copyright": "&copy; 2025 DesignSquad VIP | Abdullah Khamis. All rights reserved.",
+            }
+        };
+
+        let currentLang = 'ar';
+        const langSwitchBtn = document.getElementById('lang-switch');
+        const allElements = document.querySelectorAll('[data-lang-key]');
+        const body = document.body;
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+            langSwitchBtn.textContent = lang === 'ar' ? 'EN' : 'AR';
+            localStorage.setItem('lang', lang);
+
+            allElements.forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Handle placeholder for email input
+            const emailInput = document.querySelector('.subscribe-form input');
+            if (lang === 'ar') {
+                emailInput.placeholder = "أدخل بريدك الإلكتروني...";
+            } else {
+                emailInput.placeholder = "Enter your email...";
+            }
+        }
+
+        langSwitchBtn.addEventListener('click', () => {
+            const newLang = currentLang === 'ar' ? 'en' : 'ar';
+            setLanguage(newLang);
+        });
+
+        // Load language from local storage on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'ar';
+            setLanguage(savedLang);
+        });
     </script>
 </body>
 </html>
