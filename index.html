@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيقنا الأول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="main-title">مشروع الواجهة الأمامية</h1>
+        <p>هذه هي الصفحة الرئيسية لمشروعك.</p>
+        <p class="message" id="backend-message">جاري الاتصال بالواجهة الخلفية...</p>
+    </div>
+    <script>
+        const backendMessage = document.getElementById('backend-message');
+      const apiUrl = 'https://200000-oxcn-2xlc4p4h6-bos-projects-3b963f6c.vercel.app/api';
+        async function fetchMessage() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                backendMessage.textContent = `رسالة من الخادم: ${data.message}`;
+            } catch (error) {
+                console.error('Error fetching from backend:', error);
+                backendMessage.textContent = 'فشل الاتصال بالخادم. تأكد أن الواجهة الخلفية تعمل.';
+            }
+        }
+
+        fetchMessage();
+    </script>
+</body>
+</html>
