@@ -36,5 +36,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-// Other functions and code...
